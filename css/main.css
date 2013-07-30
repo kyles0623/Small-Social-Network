@@ -1,7 +1,7 @@
 #container, #header
 {
 	width:100%;
-	max-width:800px;
+	max-width:1000px;
 	margin:0 auto;
 	border:1px solid black;
 
@@ -20,4 +20,46 @@
 #header nav ul li
 {
 	display:inline-block;
+}
+form
+{
+	margin:0 auto;
+	max-width:600px;
+}
+
+
+#image_hidden_upload
+{
+	visibility: none;
+	display:none;
+}
+#image_upload
+{
+	cursor: pointer;
+}
+
+#image_upload img
+{
+	width:150px;
+}
+#myInfo #profile
+{
+	width:50%;
+}
+#myInfo #profile img 
+{
+	max-width:200px;
+}
+#myInfo
+{
+	width:43%;	
+}
+
+.left
+{
+	float:left;
+}
+.right
+{
+	float:right;
 }

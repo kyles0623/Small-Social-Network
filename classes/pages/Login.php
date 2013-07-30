@@ -18,7 +18,7 @@ class Login extends PageClass
 
 			if($user->authenticate($_POST['username'],md5($_POST['password'])))
 			{
-				$user->setUser($_POST['username'],$_POST['password']);
+				$user->setUser($_POST['username'],md5($_POST['password']));
 				$session = Session::getInstance();
 				$session->add($user->getData());
 				header('Location: index.php?page=home');

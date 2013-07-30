@@ -9,7 +9,7 @@ $includes = array(
 	get_include_path(),
 	BASE_PATH.'classes'
 	);
-
+date_default_timezone_set('America/New_York');
 
 ini_set('include_path',implode(PATH_SEPARATOR ,$includes));
 include('helperFunctions.php');

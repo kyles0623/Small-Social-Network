@@ -38,6 +38,12 @@ class DBConnector
 		$result = mysql_query($query) or die(mysql_error());
 		return $result;
 	}
+	public function getResult($query)
+	{
+		$result = mysql_query($query) or die(mysql_error());
+
+		return mysql_fetch_row($result);
+	}
 
 	public function getAssoc($query)
 	{

@@ -11,14 +11,19 @@ class Session
 	{
 		session_start();
 		$this->session = $_SESSION;
+
 	}
 
 	public function add($data)
 	{
+
 		if($data == false)
 			return false;
+
+		
 		foreach($data as $key=>$value)
 		{
+			echo $key." => ".$value;
 			$_SESSION[$key] = $value;
 		}
 		$this->updateSession();
@@ -49,7 +54,7 @@ class Session
 
 			if(isset($this->session[$field]))
 				$temp[$field] = $this->session[$field]; 
-			
+
 			 
 		}
 
