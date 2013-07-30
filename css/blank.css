@@ -1,0 +1,39 @@
+#container, #header
+{
+	width:100%;
+	max-width:800px;
+	margin:0 auto;
+	border:1px solid black;
+
+}
+
+#container 
+{
+	min-height:400px;
+	position:relative;
+}
+
+#header nav ul
+{
+	list-style:none;
+	display:block;
+}
+#header nav ul li
+{
+	display:inline-block;
+}
+form
+{
+	margin:0 auto;
+	display:block;
+	width:200px;
+}
+form .input
+{
+	width:200px;
+
+}
+form .input label
+{
+	min-width:100px;
+}

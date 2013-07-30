@@ -1,0 +1,23 @@
+#container, #header
+{
+	width:100%;
+	max-width:800px;
+	margin:0 auto;
+	border:1px solid black;
+
+}
+
+#container 
+{
+	min-height:400px;
+}
+
+#header nav ul
+{
+	list-style:none;
+	display:block;
+}
+#header nav ul li
+{
+	display:inline-block;
+}

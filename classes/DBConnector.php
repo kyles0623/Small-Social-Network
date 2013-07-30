@@ -54,8 +54,10 @@ class DBConnector
 	public function getSingleRow($query)
 	{
 		$data = $this->getAssoc($query);
-
-		return $data[0];
+		if(isset($data[0]) && is_array($data[0]))
+			return $data[0];
+		else
+			return $data;
 	}
 
 }

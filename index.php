@@ -15,4 +15,23 @@ $session = Session::getInstance();
 
 require_once('init/auth.php');
 
+if(!AUTH)
+{
+
+	$page = 'login';
+
+	if(!in_array(Get('function'),$allowed_functions))
+		$function = 'login';
+	else
+		$function = Get('function');
+}
+else
+{
+	$page = Get('page')!=''?Get('page'):'home';
+	$function = Get('function')!=''?Get('function'):'index';
+}
+
+$page = ucwords($page);
+$PageClass = new $page($page,$function);
+$PageClass->$function();
 

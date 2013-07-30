@@ -12,7 +12,6 @@ class User
 
 
 
-
 	public function __construct()
 	{
 		$this->db = DBConnector::getInstance();
@@ -21,7 +20,7 @@ class User
 	public function setUser($username,$password)
 	{
 
-		$data = $this->db->getSingleRow('Select * FROM users where username = "'.$username.'" AND password = "'.md5($password).'"');
+		$data = $this->db->getSingleRow('Select * FROM users where username = "'.sanitizeString($username).'" AND password = "'.md5(sanitizeString($password)).'"');
 
 		if(!empty($data))
 		{
@@ -35,6 +34,18 @@ class User
 
 
 	}
+	public function add($data)
+	{
+		$query = "INSERT into users SET username = '".$data['username']."', 
+		password = '".md5($data['password'])."',
+		first_name='".sanitizeString($data['firstname'])."',
+		last_name='".sanitizeString($data['lastname'])."' ";
+
+		$return = $this->db->query($query);
+
+		return $return;
+	}
+
 
 	public function getData($fields=array("*"))
 	{
@@ -49,12 +60,22 @@ class User
 	}
 	public function authenticate($username,$password)
 	{
-		$data = $this->db->getSingleRow('Select * FROM users where username = "'.$username.'" AND password = "'.md5($password).'"');
+		$data = $this->db->getSingleRow('Select * FROM users where username = "'.$username.'" AND password = "'.$password.'"');
 
 		if(empty($data))
 			return false;
 
 		return true;
+	}
+
+	public function isUnique($username)
+	{
+		$data = $this->db->getSingleRow('Select * FROM users where username = "'.$username.'"');
+
+		if(empty($data))
+			return true;
+
+		return false;
 	}
 
 

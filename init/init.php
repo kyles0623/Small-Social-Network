@@ -16,5 +16,23 @@ include('helperFunctions.php');
 
 function __autoload($classname) {
     $filename = BASE_PATH.'classes'.DS. $classname .".php";
-    include_once($filename);
+
+    if(!file_exists($filename))
+    {
+    	
+    	$filename = BASE_PATH.'classes'.DS.'pages'.DS.$classname.'.php';
+
+    }
+
+    if(file_exists($filename))
+    	include_once($filename);
+    else
+    {
+    	echo "That page doesn't exist. ";
+    	exit;
+    }
+    	
+    
+    	
+    
 }

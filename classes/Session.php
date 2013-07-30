@@ -46,9 +46,11 @@ class Session
 
 		foreach($fields as $field)
 		{
-			if(isset($temp[$field]))
-				$temp[$field] = $session[$field]; 
+
+			if(isset($this->session[$field]))
+				$temp[$field] = $this->session[$field]; 
 			
+			 
 		}
 
 		return $temp;
