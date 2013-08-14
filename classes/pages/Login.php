@@ -1,5 +1,6 @@
 <?php
 
+defined('ACCESS') or die('You do not have permission to be here');
 
 
 class Login extends PageClass
@@ -15,13 +16,16 @@ class Login extends PageClass
 		{
 
 			$user = new User();
-
 			if($user->authenticate($_POST['username'],md5($_POST['password'])))
 			{
 				$user->setUser($_POST['username'],md5($_POST['password']));
 				$session = Session::getInstance();
 				$session->add($user->getData());
 				header('Location: index.php?page=home');
+			}
+			else
+			{
+				$errors[] ="That is an incorrect user/password combination. Please try again.";
 			}
 		}
 

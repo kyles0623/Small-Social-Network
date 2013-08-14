@@ -1,0 +1,1 @@
+<img src="{IMG_SRC}" class="request_image" /><p>{NAME} sent you a friend request.<br /> <button class="accept_request" value="{ID}">Accept Request</button></p>

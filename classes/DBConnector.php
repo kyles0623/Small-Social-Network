@@ -19,6 +19,11 @@ class DBConnector
 
 	}
 
+	public function getDBName()
+	{
+		return $this->dbname;
+	}
+
 	public function __destruct()
 	{
 		mysql_close();
@@ -45,6 +50,18 @@ class DBConnector
 		return mysql_fetch_row($result);
 	}
 
+	public function getArray($query)
+	{
+		$result = mysql_query($query) or die(mysql_error());
+		$tempArray = array();
+		while($row = mysql_fetch_row($result) )
+		{
+			$tempArray[] = $row;
+		}
+		return $tempArray;
+
+	}
+
 	public function getAssoc($query)
 	{
 		$result = $this->query($query);
@@ -56,6 +73,19 @@ class DBConnector
 		}
 
 		return $tempArray;
+	}
+	public function getArrayofSingleValues($query)
+	{
+		$result = $this->query($query);
+
+		$tempArray = array();
+		$count = mysql_num_rows($result);
+
+		for($i=0;$i<$count;$i++)
+			$tempArray[] = mysql_result($result,$i);
+		
+		return $tempArray;
+		
 	}
 	public function getSingleRow($query)
 	{

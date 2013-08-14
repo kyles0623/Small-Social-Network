@@ -1,30 +1,74 @@
+
+body
+{
+	margin:0;
+	padding:0;
+}
+h3
+{
+	text-decoration: underline;
+}
+h5
+{
+	margin:0;
+	width:auto;
+	font-weight:bold;
+}
+a{
+	text-decoration: none;
+	color:#3296A3;
+}
+a:hover
+{
+	color:#24C1D6;
+}
 #container, #header
 {
 	width:100%;
 	max-width:1000px;
 	margin:0 auto;
-	border:1px solid black;
+	   padding: 10px;
 
 }
 
 #container 
 {
 	min-height:400px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:0;
 }
-
-#header nav ul
+#header 
 {
-	list-style:none;
-	display:block;
+	position:relative;
+	height:59px;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc; 
+	border-top: 1px solid #ccc;
 }
-#header nav ul li
-{
-	display:inline-block;
+#header nav ul {
+	list-style: none; 
+	margin:0;}
+#header nav li {
+	float: left; 
 }
+#header nav li a {
+	display: block;
+	padding: 20px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px solid #ccc; 
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+#header nav li a:hover {
+	color: #c00;
+	background-color: #fff; }
 form
 {
 	margin:0 auto;
-	max-width:600px;
+	max-width:800px;
 }
 
 
@@ -36,11 +80,26 @@ form
 #image_upload
 {
 	cursor: pointer;
+	width:150px;
+	position: relative;
+	margin: 5px auto 5px;
 }
 
 #image_upload img
 {
 	width:150px;
+}
+
+#image_upload #no_image_txt {
+    color: red;
+    font-family: centaur;
+    font-size: 25px;
+    left: 8px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px 0 #000000;
+    top: 14px;
+    width: 140px;
 }
 #myInfo #profile
 {
@@ -53,6 +112,7 @@ form
 #myInfo
 {
 	width:43%;	
+	padding:15px;
 }
 
 .left
@@ -62,4 +122,198 @@ form
 .right
 {
 	float:right;
+}
+#statuses
+{
+	width:500px;
+}
+.control-label 
+{
+	padding-left:0;
+}
+/* Search Page */
+#friends .friend
+{
+	width:400px;
+	height:250px;
+	display:inline-block;
+}
+
+#friends .friend .image img 
+{
+	max-width:200px;
+	max-height:200px;
+	margin:auto;
+	display: block;
+}
+#friends .friend .image
+{
+float:left;
+width: 206px;
+height:206px;
+position: relative;
+border:1px solid black;
+padding:2px;
+margin:3px;
+}
+
+.clear
+{
+	clear:both;
+}
+.infopiece.image
+{
+	max-width:200px;
+	min-height:100px;f
+}
+
+.checkmark
+{
+	width:25px;
+}
+
+#mail img {
+    width: 20px;
+}
+
+
+
+#mail {
+    position: absolute;
+    right: 11px;
+    top: 14px;
+}
+
+.request_image
+{
+	max-width:100px;
+}
+.message_body p
+{
+	padding:10px;
+	display:inline;
+}
+
+#mutualFriends
+{
+	width:500px;
+}
+.mutual_friend
+{
+	max-width:150px;
+	display:inline-block;
+	margin:5px;
+}
+.mutual_friend img 
+{
+	width:150px;
+}
+
+
+
+
+form{
+border:solid 2px #b7ddf2;
+background:#ebf4fb;
+min-height: 100px;
+}
+form h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+form p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+form label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+form .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+form input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:200px;
+margin:2px 0 20px 10px;
+}
+form button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+.status
+{
+	padding:5px;
+
+}
+.status h4
+{
+	font-family:"Trebuchet MS";
+	color: #425360;
+
+}
+.status h5, .status h6
+{
+	color:gray;
+}
+.status:nth-child(2n), .message:nth-child(2n)
+{
+	background-color:#e8e8e8;
+}
+.status:nth-child(2n+1), .message:nth-child(2n+1)
+{
+	background-color: #EBF4FB;
+}
+
+.message
+{
+	padding:5px;
+}
+#newMessage
+{
+	width:440px;
+}
+#newMessage .input
+{
+	width:200px;
+	margin:0 auto;
+
+}
+#newMessage .input textarea
+{
+	width:200px;
+	    margin: 2px 0 20px 10px;
+    padding: 4px 2px;
+}
+#newMessage .select-box
+{
+	width:400px;
+	margin:0 auto;
+}
+#profile-update
+{
+	 width: 354px;
 }

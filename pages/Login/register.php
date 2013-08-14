@@ -2,10 +2,10 @@
 
 	<section class="input"><label for="firstname">First Name: </label><input type="text" name="firstname" id="firstname" /></section>
 	<section class="input"><label for="lastname">Last Name: </label><input type="text" name="lastname" id="lastname" /></section>
-	<section class="input"><label for="username">Username: </label><input type="text" name="username" id="username" /><section id="unique"></section></section>
+	<section class="input"><section id="unique"></section><label for="username">Username: </label><input type="text" name="username" id="username" /></section>
 	<section class="input"><label for="password">Password: </label><input type="password" name="password" id="password" /></section>
 	<input type="submit" id="submit" name="submit" />
-
+	<div class="clear"></div>
 
 </form>
 
@@ -68,13 +68,13 @@ function checkUnique(username)
 
         	if(result == 'unique')
         	{
-        		$("#unique").html('Unique');	
+        		$("#unique").html('That username is unique').show();	
         		unique = true;
         	}
         	else
         	{
 
-        		$("#unique").html('Not Unique');
+        		$("#unique").html('That username is not unique.').show();
         		unique = false;
         	}
         	
